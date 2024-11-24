@@ -1,0 +1,28 @@
+version: "3.1"
+rules:
+  - rule: Greet and ask for name and personal ID
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: action_ask_for_name_and_id
+
+  - rule: User provides name and personal ID
+    steps:
+      - intent: provide_name_and_id
+      - action: action_store_name_and_id
+      - action: action_suggest_random_date
+
+  - rule: User agrees to book a date
+    steps:
+      - intent: affirm
+      - action: action_book_date
+
+  - rule: User denies suggested date and asks for other dates
+    steps:
+      - intent: deny
+      - action: action_ask_for_specific_day
+
+  - rule: User requests available dates
+    steps:
+      - intent: ask_for_day
+      - action: action_provide_available_dates

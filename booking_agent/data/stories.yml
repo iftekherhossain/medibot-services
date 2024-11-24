@@ -1,0 +1,27 @@
+version: "3.1"
+stories:
+  - story: Greet and book appointment
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: action_ask_for_name_and_id
+      - intent: provide_name_and_id
+      - action: action_store_name_and_id
+      - action: action_suggest_random_date
+      - intent: affirm
+      - action: action_book_date
+
+  - story: Deny date and provide options
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: action_ask_for_name_and_id
+      - intent: provide_name_and_id
+      - action: action_store_name_and_id
+      - action: action_suggest_random_date
+      - intent: deny
+      - action: action_ask_for_specific_day
+      - intent: ask_for_day
+      - action: action_provide_available_dates
+      - intent: affirm
+      - action: action_book_date

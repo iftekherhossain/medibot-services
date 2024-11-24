@@ -1,0 +1,74 @@
+version: "3.1"
+intents:
+  - greet
+  - provide_name_and_id
+  - affirm
+  - deny
+  - ask_for_day
+
+entities:
+  - name
+  - personal_id
+  - selected_date
+
+actions:
+  - utter_greet
+  - action_ask_for_name_and_id
+  - action_store_name_and_id
+  - action_suggest_random_date
+  - action_ask_for_specific_day
+  - action_provide_available_dates
+  - action_book_date
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+
+  utter_ask_for_name_and_id:
+    - text: "Could you please provide your name and personal ID?"
+
+  utter_suggest_random_date:
+    - text: "I have a random date suggestion for you. Would you like to book it?"
+
+  utter_ask_for_specific_day:
+    - text: "Can you tell me a specific date you're interested in?"
+
+  utter_provide_available_dates:
+    - text: "Here are some available dates for you: {dates}"
+
+  utter_ask_for_confirmation:
+    - text: "Do you want to confirm this appointment?"
+
+  utter_successful_booking:
+    - text: "Your appointment has been successfully booked!"
+
+  utter_cancellation:
+    - text: "The appointment has been cancelled."
+
+slots:
+  name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: name
+
+  personal_id:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: personal_id
+
+  selected_date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: selected_date
+
+  available_dates:
+    type: list
+    mappings:
+      - type: from_text
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

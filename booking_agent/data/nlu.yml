@@ -1,0 +1,37 @@
+version: "3.1"
+nlu:
+  - intent: greet
+    examples: |
+      - Hello
+      - Hi
+      - Hey
+      - Good morning
+      - Good afternoon
+
+  - intent: provide_name_and_id
+    examples: |
+      - My name is [John Doe](name) and my personal ID is [12345](personal_id)
+      - I am [Alice](name), and my ID is [98765](personal_id)
+
+  - intent: affirm
+    examples: |
+      - Yes
+      - Sure
+      - Okay
+      - Sounds good
+      - Book it
+
+  - intent: deny
+    examples: |
+      - No
+      - Not really
+      - I don’t think so
+      - I’m not interested
+      - Can we try another day?
+
+  - intent: ask_for_day
+    examples: |
+      - Can you suggest a day?
+      - Do you have any specific dates available?
+      - When can I book an appointment?
+      - What dates are open?

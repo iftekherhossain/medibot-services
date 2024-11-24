@@ -1,0 +1,17 @@
+pose_detection/*/
+booking_agent/models/*
+booking_agent/.rasa/*
+**/__pycache__/
+**/*.pt
+**/*.dat
+**/*.gz
+**/*.h5
+**/*.jpeg
+**/*.jpg
+**/*.png
+**/*.mp4
+**/*.pkl
+**/*.db
+
+
+
